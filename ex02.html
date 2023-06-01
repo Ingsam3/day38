@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>PUSH & POP</title>
+	</head>
+	<body>
+	<script type="text/javascript">
+	
+		//PUSH & POP 
+		let kdata = ["서울", "부산"];
+		document.write("기본 배열 : " + kdata+"<br>");
+		//제일 마지막 부분에 추가
+		kdata.push("인천","세종");
+		document.write("push 배열 : " + kdata+"<br>");
+		
+		//제일 마지막 부분 삭제
+		kdata.pop(); 
+		document.write("pop 배열 : " + kdata+"<br>");
+		
+		//제일 앞부분부터 추가
+		kdata.unshift("111","2222");
+		document.write("unshift 배열 : " + kdata+"<br>");
+		
+		//제일 앞 부분부터 삭제
+		kdata.shift("111","2222");
+		document.write("shift 배열 : " + kdata+"<br>");
+
+		//새로운 데이터 생성(변수 지정 해야함)
+		var d = kdata.concat("추가","데이터");
+		document.write("concat 배열 : " + d+"<br>");
+		
+		
+	</script>
+	
+	
+	</body>
+</html>

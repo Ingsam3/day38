@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>배열</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//배열 - 데이터 추가
+			const city = ["서울","부산","인천"]; //자료형 : Object
+			const printArr = () =>{
+				for(let i=0; i<city.length; i++){
+					document.write(`배열데이터 ${i} = ${city[i]}<br>`);
+				}
+			}
+			printArr();
+			city[3]="대구"; //city - 데이터 추가
+			document.write(`<hr>${city}<br>`);
+			
+			//Join - 문자형태로 변함
+			const str =city.join("/"); //데이터 사이의 값을  /로 채워서 출력
+			document.write("str : " +str+"<br>");
+			document.write("str type: " + typeof str+"<br>");
+			document.write("city type: " + typeof city+"<br>");
+			
+			document.write("str.split: " + str.split("/")+"<br>");
+			document.write("str type: " + typeof str.split("/")+"<br>");
+			
+		</script>
+			
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>forEach</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// forEach :기본적으로 배열에서 루프돌 때 사용(return 값 없음)
+			const data = [111,222,333];	
+			document.write("=======일반문======= <br>");
+			function printArr(item, index){
+				document.write(`배열데이터 ${index} = ${item} <br>`);
+			}
+			/*
+			const printArr =() =>{
+				document.write(`배열데이터 ${index} = ${item}<br>`);
+			}*/
+			
+			data.forEach(printArr);
+			document.write("=======forEach======= <br>");
+			
+			data.forEach((item, index) =>{
+				document.write(`배열데이터 ${index} = ${item}<br>`);
+			});
+			
+			document.write("========map======== <br>");
+			//map은 return 사용 가능 & 새로운 데이터 집합 생성
+			//const data = [111,222,333];
+			const mapArr = (value) =>{
+				return `<b style ="color:red;"> ${value} </b>`;
+			}
+			
+			const mapArr2 = (value) => `<b style ="color :blue;"> ${value} </b>`
+			
+			const mapData = data.map(mapArr);	
+			
+			const mapData22 = data.map(
+					(value)=> `<b style ="color :blue;"> ${value} </b>`
+			);	
+			
+			document.write(mapData); 
+			document.write(mapData22); 
+		
+		</script>
+	
+	</body>
+</html>

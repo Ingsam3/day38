@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>서버로부터 데이터 받기</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		//서버로부터 데이터 받기
+		var userInfo = [
+			{id : "aaa", name : "lee", age :20},
+			{"id" : "bbb", "name" : "lee", "age" : 30},
+			{id : "ccc", name : "lee", age : 40}
+			
+		];
+		//페이지 읽히면 자동 실행
+		window.onload =() =>{
+			const div = document.querySelector(".test");
+			let msg = //사용자의 정보 가져오기
+				`아이디 : ${userInfo[0].id}<br>
+				이름 : ${userInfo[0].name}<br>
+				나이 : ${userInfo[0].age}<br>`;
+			div.innerHTML =msg; //html 페이지에 msg를 올린다
+			
+			//사용자 입력값 & 저장값 비교
+			const id = "bbb"; //사용자가 입력한 값과 저장되어 있는 값이 같다면
+			const result = userInfo.filter( (d) => d.id === id  );
+			console.log(result);
+			
+			console.log("=======일반 for문=======");
+			for(let i =0; i < userInfo.length; i++){
+				console.log(userInfo[i].age-1);
+			}
+			console.log("=======forEach문=======");
+			// 위 for문 단순 출력 형식
+			userInfo.forEach( (d) => {
+				console.log(d.age-1);
+			});
+			console.log("=======map=======");
+			//map
+			const ddd = userInfo.map ( (d2) =>{
+				d2.age = d2.age-1;
+				return d2;  // 원래 형태로 치환
+			});
+			console.log(ddd);
+			console.log("=======forOf문=======");
+			
+			//java - foreach와 같음
+			for(let user of userInfo){
+				console.log(user);
+			}
+			
+			
+		}
+		
+		</script>
+		
+		<div class="test"></div>
+		
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>filter</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		//filter
+		
+		const data =[10,20,30,40,50,60,70,80,90,100];
+		const filterArr01 = (index,value ) =>{
+			console.log(`index : ${index}, value : ${value}`);
+			return value >=50;
+		}
+		document.write("필터전 데이터 : " +data+"<hr>");
+		const fdata01 = data.filter(filterArr01);
+		document.write(fdata01+"<hr>");
+		
+		const d2 = data.filter(
+				(v)=>{
+				return v ==50;
+		});
+		
+		//중괄호 없으면 리턴 없어야 함
+		const d3 = data.filter( (v)=> v === 50 );
+		
+		document.write(data+"<hr>");
+		
+		
+		</script>
+	</body>
+</html>
