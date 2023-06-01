@@ -2,9 +2,26 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>동기화, 비동기화 - setTimeout</title>
 	</head>
 	<body>
+		<script type="text/javascript">
+		
+		//동기화 :  순차적으로 실행
+			const test =() =>{
+				console.log("load 실행");
+			}
+			window.onload =() =>{
+				console.log("load start"); 
+				//test(); 
+				setTimeout(test,2000);//2초 이후로 test 실행
+				console.log("load end");
+			}
+		
+		
+		
+		</script>
+	
 	
 	</body>
 </html>

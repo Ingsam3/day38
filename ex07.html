@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>addEventlisner&setTimeout&setInterval</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		
+		var start;
+		window.onload =()=>{
+			start = document.querySelector("#start");	
+			console.log("start :" + start);
+			start.addEventListener("click", start1);
+			start.addEventListener("click", start2);
+		}
+		
+		const start1 = () => {
+			const today = new Date();
+			console.log(today);
+			let time = today.getMonth() +1+"월";
+			time += today.getDate() +"일";
+			time += today.getHours() +"시";
+			time += today.getMinutes() +"분";
+			time += today.getSeconds() +"초";
+			document.getElementById("clock").innerHTML = time;
+			e = setTimeout(start1, 1000); //1회성 
+			
+		}
+		
+		var e2;
+		const start2 = () =>{ //한번 클릭에 두개의 함수 가능
+			e2 = setInterval(timestart, 1000); // 한번 실행되면 지정 시간마다 반복
+		}
+		
+		const timestart = () =>{
+			var d = new Date();
+			document.getElementById("clock2").innerHTML = d.toLocaleString();//시간가져옴2
+		}
+		
+		const end =()=>{
+			clearTimeout(e); // setTimeout종료
+			alert("end");
+			
+		}
+		const end2 =()=>{
+			clearTimeout(e2); //setInterval종료
+			alert("end2");
+			
+			
+		}
+		
+		
+		</script>
+	
+		<div id = "clock"></div>
+		<button id="start">start</button>
+		<button onclick="end(); end2();">end</button> <!-- onclick도 여러거 가능 -->
+		<div id = "clock2"></div>
+	
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>문제01</title>
+		<script type="text/javascript">
+		//모든 회원보기 버튼 클릭하면 list -> 표로 변화
+		//회원정보입력
+		var userInfo = [
+			{id : "aaa", name : "홍길동", age : 20},
+			{id : "bbb", name : "김개똥", age : 30},
+			{id : "ccc", name : "고길동", age : 40}
+		];
+		//show 함수 생성
+		const showFun = () =>{
+			//const list = document.querySelector("#list");
+			
+			/*
+			//표 생성
+			let table ="";
+			table += `<table border='1'>`
+			table += `<tr> `
+			table += `<th>이름</th><th>나이</th> <th>나이</th>`
+			table += `</tr> `
+			
+				for(let i=0; i<3; i++){
+					table += `<tr>`
+					for (j = 0; j < 1; j++)
+						table += 
+						`<td>${userInfo[i].id}</td> 
+						<td>${userInfo[i].name}</td>
+						<td>${userInfo[i].age}</td> `
+						table += `</tr>`
+						 }
+				 }
+			table += "</table>"			
+				 //list의 value를 표로 바꿈 
+				//list.innerHTML ="";
+				 let msg = table();
+				list.innerHTMl = msg;
+			*/
+			
+			let table = "";
+				table += '<table border="1">';
+				table += "<tr><th>아이디</th> <th>이름</th> <th>나이</th></tr>";
+				for (i = 0; i < userInfo.length; i++) {
+					table += "<tr>";
+					table += `
+					<td>${userInfo[i].id}</td> 
+					<td onclick="info('${userInfo[i].id}')"> ${userInfo[i].name}</td>
+					<td>${userInfo[i].age}</td>`;
+					table += "</tr>";
+				}
+				table += "</table>";
+				
+				document.getElementById("list").innerHTML =table;
+				
+				}
+		 
+		
+      
+		
+		//특정 회원 조회
+		
+		
+		
+		//특정 회원 삭제
+		
+
+	
+		</script>
+	</head>
+	<body>
+		<div id ="list">목록을 보여줍니다</div>
+		<hr>
+		 <input type = button value="모든 회원보기" id = "show" name ="show" onclick="showFun()">
+		<hr>
+		<input type ="text" value ="input id" id ="input_id"><br>
+		<input type = button value="특정 회원 조회" id = "select" name ="select" onclick="">
+		<hr>
+		<input type ="text" value ="input id" id ="input_del"><br>
+		<input type = button value="특정 회원 삭제" id = "delect" name ="delect" onclick="">
+	
+	</body>
+</html>
